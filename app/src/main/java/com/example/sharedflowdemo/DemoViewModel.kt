@@ -23,8 +23,9 @@ class DemoViewModel : ViewModel() {
     private fun sharedFlowInit() {
         viewModelScope.launch {
             for (i in 1..1000) {
-                delay(2000)  // Каждые 2 секунды
-                _sharedFlow.emit(i)  // Отправляем значение
+                delay(2000)
+                println("Emitting $i")  // ← добавляем вывод
+                _sharedFlow.emit(i)
             }
         }
     }

@@ -55,6 +55,7 @@ fun MainScreen(
     // Сбор данных из потока
     LaunchedEffect(key1 = Unit) {
         sharedFlow.collect { value ->
+            println("Collecting $value")  // ← добавляем вывод
             messages.add(value)
         }
     }
